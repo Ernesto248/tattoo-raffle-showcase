@@ -1,5 +1,7 @@
 # Tattoo Raffle · one ticket, one owner
 
+![Tattoo Raffle case study preview](docs/preview.svg)
+
 A self-contained case study of the ticket selection and reservation experience I built for a real tattoo campaign. Visitors can choose numbers, reserve or release them, confirm a **simulated** checkout and replay the confirmation event to inspect idempotency.
 
 **[Try the live demo](https://leonardsolutions.dev/demos/tattoo-raffle)** · [Portfolio](https://leonardsolutions.dev/#work)
