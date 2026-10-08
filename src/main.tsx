@@ -5,6 +5,7 @@ import type { Language } from "./demo-i18n";
 import "./base.css";
 import "./demo.css";
 import "./demo-v2.css";
+import "./product-fidelity.css";
 
 function App() {
   const [language, setLanguage] = useState<Language>(() => new URLSearchParams(location.search).get("lang") === "en" ? "en" : "es");

@@ -1,6 +1,6 @@
 # Tattoo Raffle · one ticket, one owner
 
-![Tattoo Raffle case study preview](docs/preview.svg)
+![Yam Stigmata campaign reconstruction](docs/preview.png)
 
 A self-contained case study of the ticket selection and reservation experience I built for a real tattoo campaign. Visitors can choose numbers, reserve or release them, confirm a **simulated** checkout and replay the confirmation event to inspect idempotency.
 
@@ -12,10 +12,12 @@ A self-contained case study of the ticket selection and reservation experience I
 
 1. Select up to ten available numbers or choose a package.
 2. Reserve them. They move from **available** to **reserved**.
-3. Release the reservation and see the numbers become available again, or confirm a simulated checkout.
+3. Release the reservation and see the numbers become available again, or enter the prefilled test identity and confirm a simulated checkout.
 4. Replay the confirmation event: assigned tickets and the purchase count do not change.
 
-On small screens, browse ticket ranges or search for a number. The sandbox persists for one browser session and has a **Reset** control. Spanish and English are supported.
+On small screens, the campaign button jumps directly to the ticket picker; browse ranges or search for a number. The checkout stays one tap away. The sandbox persists for one browser session and has a **Reset** control. Spanish and English are supported.
+
+The Yam Stigmata logo, campaign tattoo image and display font are used with permission for this reconstruction. They are not offered for reuse. The technical case study opens on demand below the campaign.
 
 ## Implementation
 
@@ -31,7 +33,7 @@ stateDiagram-v2
 - `src/domain/pricing.ts` is the package-pricing module from the private product, included with permission. The UI derives prices from it instead of trusting an editable price from the browser.
 - `src/domain/raffle.ts` is a browser-only state machine for the portfolio experience. It validates ticket counts and availability, and tracks processed event IDs.
 - `src/domain/raffle.test.ts` checks reservation, release, confirmation, replay and pricing.
-- `src/RaffleDemo.tsx` and `src/DemoStory.tsx` provide the participant interface, event view and scroll story.
+- `src/RaffleDemo.tsx` provides the participant interface and event view. `src/DemoCaseStudy.tsx` opens the optional scroll story.
 
 **Production boundary:** real checkout totals must be calculated on the server. Ticket uniqueness must be enforced transactionally, and a signed payment webhook must authorize assignment. This demo deliberately has no payment or email endpoint.
 

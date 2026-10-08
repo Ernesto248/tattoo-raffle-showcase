@@ -32,8 +32,8 @@ export function Metric({ label, value, detail, className = "" }: { label: string
   return <div className={`demo-metric ${className}`}><span>{label}</span><strong>{value}</strong>{detail && <small>{detail}</small>}</div>;
 }
 
-export function Panel({ kicker, title, children, className = "" }: { kicker: string; title: string; children: ReactNode; className?: string }) {
-  return <section className={`demo-panel ${className}`}><div className="demo-panel-head"><span>{kicker}</span><h2>{title}</h2></div>{children}</section>;
+export function Panel({ kicker, title, children, className = "", id }: { kicker: string; title: string; children: ReactNode; className?: string; id?: string }) {
+  return <section id={id} className={`demo-panel ${className}`}><div className="demo-panel-head"><span>{kicker}</span><h2>{title}</h2></div>{children}</section>;
 }
 
 export function SandboxHeading({ language, title, description }: { language: Language; title: string; description: string }) {
